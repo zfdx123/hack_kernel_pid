@@ -1,0 +1,5 @@
+config HACK_HIDE_PID
+	tristate "Kernel Hack Driver Hide PID"
+	default y
+	help
+	This is the kernel hack driver.

@@ -1,0 +1,11 @@
+CONFIG_MODULE_SIG=n
+
+KERNELDIR := /usr/src/linux-headers-$(uname -r)
+obj-m += hide.o
+hide-objs := entry.o hide_pid.o
+
+default:
+	make -C $(KERNELDIR) M=$(shell pwd) modules
+
+clean:
+	rm -rf *.o *.ko *.mod *.mod.* .*.mod.* .*.*.cmd modules.* Mo*.*
