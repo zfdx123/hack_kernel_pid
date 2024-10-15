@@ -26,7 +26,7 @@ int main()
 		return -1;
 	}
 
-	int retvalue = ioctl(fd, OP_RED_MOD, 0);
+	int retvalue = ioctl(fd, OP_RED_PID, 5906);
 	if (0 != retvalue)
 	{
 		perror("ioctl failure\n");
